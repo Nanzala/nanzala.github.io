@@ -14,16 +14,15 @@ Creation by Eric & Tabby
 public class Calculator{
 
 	// Addition
-	public static float add(float a, float b){
+	public static void add(float a, float b){
 
 		float sum = a + b;
 		System.out.println("Sum is: " + sum);
-		return sum;
 	}
 
 	public static void average(int a, int b){
 		
-		float aveResult = add(a, b)/ 2;
+		float aveResult = (float)a + ((float)b-(float)a)/2;
 		System.out.println("Average is: " + aveResult);
 	}
 
@@ -49,16 +48,34 @@ public class Calculator{
 	}
 
 	// Square root
-	public static void squareRoot(float a){
+	public static void squareRoot(int a){
 
-		double resultSquareRoot = Math.sqrt(a);
+		//double resultSquareRoot = Math.sqrt(a);
+		
+		double num;
+
+		double resultSquareRoot = a / 2;
+
+		do{
+			num = resultSquareRoot;
+			resultSquareRoot = (num + (a / num)) / 2;
+		}
+		while ((num - resultSquareRoot) != 0);
+		
+
 		System.out.println("The square root of " + a + " is: " + resultSquareRoot);
 
 	}
 
 	// Power
 	public static void power(float a, float b){
-		double resultPower = Math.pow(a,b);
+		
+		//double resultPower = Math.pow(a,b);
+
+		double resultPower = 1;
+		for(int i=0; i<b; i++){
+			resultPower*=a;
+		}
 		System.out.println("The result of " + a + " ^ " + b + " is: " + resultPower);
 
 	}
