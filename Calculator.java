@@ -60,7 +60,7 @@ public class Calculator{
 		double resultSquareRoot = a / 2;
 
 		do{
-			num = resultSquareRoot; //
+			num = resultSquareRoot;
 			resultSquareRoot = (num + (a / num)) / 2; 
 		}
 		while ((num - resultSquareRoot) != 0);
