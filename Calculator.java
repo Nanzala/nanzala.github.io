@@ -57,11 +57,11 @@ public class Calculator{
 		
 		double num;
 
-		double resultSquareRoot = a / 2;//4.5
+		double resultSquareRoot = a / 2;
 
 		do{
 			num = resultSquareRoot; //
-			resultSquareRoot = (num + (a / num)) / 2; //3.25 + 
+			resultSquareRoot = (num + (a / num)) / 2; 
 		}
 		while ((num - resultSquareRoot) != 0);
 		
