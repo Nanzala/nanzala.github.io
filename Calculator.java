@@ -43,6 +43,9 @@ public class Calculator{
 	// Division
 	public static void divide(float a, float b){
 
+		if (b==0){
+			System.out.println("Math Error: Cannot divide by zero!");
+		}
 		double division = a / b;
 		System.out.println("Division is: " + division);
 	}
@@ -54,11 +57,11 @@ public class Calculator{
 		
 		double num;
 
-		double resultSquareRoot = a / 2;
+		double resultSquareRoot = a / 2;//4.5
 
 		do{
-			num = resultSquareRoot;
-			resultSquareRoot = (num + (a / num)) / 2;
+			num = resultSquareRoot; //
+			resultSquareRoot = (num + (a / num)) / 2; //3.25 + 
 		}
 		while ((num - resultSquareRoot) != 0);
 		
