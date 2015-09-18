@@ -394,7 +394,9 @@ footer{
 .logo{
 	color: #F62459;
 }
-.footer_logo img{}
+.footer_logo img{
+	margin-top: -50px;
+}
 .social{
 	padding-top: 65px;
 }

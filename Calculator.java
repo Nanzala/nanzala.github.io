@@ -21,9 +21,9 @@ public class Calculator{
 		return sum;
 	}
 
-	public static void average(float a, float b){
+	public static void average(int a, int b){
 		
-		double aveResult = add(a, b)/ 2;
+		float aveResult = add(a, b)/ 2;
 		System.out.println("Average is: " + aveResult);
 	}
 
@@ -83,28 +83,35 @@ public class Calculator{
 		 System.out.println("Welcome!\n What do you want to do?\n 1.Add		2.Subtract 	3.Multiply\n 4.Divide	5.Modulus	6.Average\n 7.Squareroot	8.Power");
 
 		 int choice = Integer.parseInt(in.nextLine());
-		 if (choice==7){
-		 	System.out.println("Enter Number  to Find Square Root Of...: ");
-		 	num1 = Integer.parseInt(in.nextLine());
-		 	squareRoot(num1);
+		 
+		 if(!(choice<1||choice>8)){
+			 if (choice==7){
+			 	System.out.println("Enter Number  to Find Square Root Of...: ");
+			 	num1 = Integer.parseInt(in.nextLine());
+			 	squareRoot(num1);
+			 }
+			 else{
+			 	System.out.println("Enter First Number... ");
+			 	num1 = Integer.parseInt(in.nextLine());
+			 	System.out.println("Enter Second Number... ");
+			 	num2 = Integer.parseInt(in.nextLine());
+
+			 	switch(choice){
+			 		case 1: add(num1, num2); break;
+			 		case 2: subtract(num1, num2); break;
+			 		case 3: multiply(num1, num2); break;
+			 		case 4: divide(num1, num2); break;
+			 		case 5: mod(num1, num2); break;
+			 		case 6: average(num1, num2); break;
+			 		case 8: power(num1, num2); break;
+
+			 		default: System.out.println("Please Enter Valid Choice (1->8)"); break;
+			 	}
+		 	}
 		 }
 		 else{
-		 	System.out.println("Enter First Number... ");
-		 	num1 = Integer.parseInt(in.nextLine());
-		 	System.out.println("Enter Second Number... ");
-		 	num2 = Integer.parseInt(in.nextLine());
-
-		 	switch(choice){
-		 		case 1: add(num1, num2); break;
-		 		case 2: subtract(num1, num2); break;
-		 		case 3: multiply(num1, num2); break;
-		 		case 4: divide(num1, num2); break;
-		 		case 5: mod(num1, num2); break;
-		 		case 6: average(num1, num2); break;
-		 		case 8: power(num1, num2); break;
-
-		 		default: System.out.println("Please Enter Valid Choice (1->8)"); break;
+		 		System.out.println("Wrong Choice\n Please Select The Above Options!");
 		 	}
-		 }	 
+		 	 
 	}
 }
